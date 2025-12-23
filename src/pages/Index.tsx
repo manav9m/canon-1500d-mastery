@@ -75,7 +75,7 @@ export default function Index() {
             <FadeIn delay={0.15}>
               <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 leading-tight tracking-tight text-foreground">
                 Master Your{' '}
-                <span className="text-foreground font-bold">Canon 1500D</span>
+                <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent font-bold">Canon 1500D</span>
               </h1>
             </FadeIn>
 
