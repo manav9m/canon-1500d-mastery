@@ -65,17 +65,17 @@ export default function Index() {
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
             <FadeIn delay={0.1}>
-              <Badge variant="outline" className="mb-4 md:mb-6 px-3 md:px-4 py-1.5 text-xs md:text-sm border-border/50">
-                <Camera className="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2" />
-                Canon EOS 1500D Mastery Academy
-              </Badge>
+            <Badge variant="outline" className="mb-4 md:mb-6 px-3 md:px-4 py-1.5 text-xs md:text-sm border-border/50 text-foreground bg-background/50">
+              <Camera className="w-3 h-3 md:w-4 md:h-4 mr-1.5 md:mr-2" />
+              Canon EOS 1500D Mastery Academy
+            </Badge>
             </FadeIn>
 
             {/* Headline */}
             <FadeIn delay={0.15}>
-              <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 leading-tight tracking-tight">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 leading-tight tracking-tight text-foreground">
                 Master Your{' '}
-                <span className="gradient-text">Canon 1500D</span>
+                <span className="text-foreground font-bold">Canon 1500D</span>
               </h1>
             </FadeIn>
 
