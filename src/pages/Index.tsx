@@ -189,7 +189,7 @@ export default function Index() {
 
               {learningPath.map((phase, i) => (
                 <FadeIn key={phase.step} delay={i * 0.1} direction="left">
-                  <div className="relative flex items-start gap-4 md:gap-6 pb-20 md:pb-24 last:pb-0">
+                  <div className="relative flex items-start gap-4 md:gap-6 pb-24 md:pb-28 last:pb-0">
                     {/* Step indicator */}
                     <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-full bg-card border border-border flex items-center justify-center flex-shrink-0">
                       <phase.icon className="w-5 h-5 md:w-6 md:h-6" />
