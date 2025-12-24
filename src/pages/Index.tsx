@@ -3,60 +3,59 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Camera, BookOpen, Sliders, GitCompare, FileText, Target, 
-  ChevronRight, Play, Award, Zap, CheckCircle2, Aperture, Focus
-} from 'lucide-react';
+import { Camera, BookOpen, Sliders, GitCompare, FileText, Target, ChevronRight, Play, Award, Zap, CheckCircle2, Aperture, Focus } from 'lucide-react';
 import { useProgress } from '@/contexts/ProgressContext';
 import { AnimatedBackground } from '@/components/ui/animated-background';
 import { FadeIn, ScaleIn, StaggerContainer, StaggerItem, HoverScale } from '@/components/ui/motion-wrapper';
-
-const features = [
-  {
-    icon: BookOpen,
-    title: '10 In-Depth Lessons',
-    description: 'From camera basics to advanced scenarios',
-  },
-  {
-    icon: Sliders,
-    title: 'Settings Simulator',
-    description: 'Practice exposure without wasting shots',
-  },
-  {
-    icon: GitCompare,
-    title: 'Mode Comparisons',
-    description: 'See why manual control matters',
-  },
-  {
-    icon: FileText,
-    title: 'Cheat Sheets',
-    description: 'Quick reference for any situation',
-  },
-  {
-    icon: Target,
-    title: 'Photo Challenges',
-    description: 'Put your skills to the test',
-  },
-  {
-    icon: Award,
-    title: 'Progress Tracking',
-    description: 'Watch your skills grow over time',
-  },
-];
-
-const learningPath = [
-  { step: 1, title: 'Master Your Camera', lessons: 6, icon: Camera },
-  { step: 2, title: 'Scenario Mastery', lessons: 4, icon: Aperture },
-  { step: 3, title: 'Practice & Challenge', lessons: 0, icon: Focus },
-];
-
+const features = [{
+  icon: BookOpen,
+  title: '10 In-Depth Lessons',
+  description: 'From camera basics to advanced scenarios'
+}, {
+  icon: Sliders,
+  title: 'Settings Simulator',
+  description: 'Practice exposure without wasting shots'
+}, {
+  icon: GitCompare,
+  title: 'Mode Comparisons',
+  description: 'See why manual control matters'
+}, {
+  icon: FileText,
+  title: 'Cheat Sheets',
+  description: 'Quick reference for any situation'
+}, {
+  icon: Target,
+  title: 'Photo Challenges',
+  description: 'Put your skills to the test'
+}, {
+  icon: Award,
+  title: 'Progress Tracking',
+  description: 'Watch your skills grow over time'
+}];
+const learningPath = [{
+  step: 1,
+  title: 'Master Your Camera',
+  lessons: 6,
+  icon: Camera
+}, {
+  step: 2,
+  title: 'Scenario Mastery',
+  lessons: 4,
+  icon: Aperture
+}, {
+  step: 3,
+  title: 'Practice & Challenge',
+  lessons: 0,
+  icon: Focus
+}];
 export default function Index() {
-  const { getOverallProgress, getCompletedLessonsCount } = useProgress();
+  const {
+    getOverallProgress,
+    getCompletedLessonsCount
+  } = useProgress();
   const overallProgress = getOverallProgress();
   const completedLessons = getCompletedLessonsCount();
-
-  return (
-    <div className="min-h-screen overflow-x-hidden">
+  return <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden hero-gradient">
         <AnimatedBackground />
@@ -106,8 +105,7 @@ export default function Index() {
             </FadeIn>
 
             {/* Progress indicator for returning users */}
-            {completedLessons > 0 && (
-              <FadeIn delay={0.3}>
+            {completedLessons > 0 && <FadeIn delay={0.3}>
                 <div className="mt-8 md:mt-12 px-4">
                   <Card className="inline-flex flex-col sm:flex-row items-center gap-3 md:gap-4 p-4 glass-card">
                     <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center">
@@ -124,8 +122,7 @@ export default function Index() {
                     </Link>
                   </Card>
                 </div>
-              </FadeIn>
-            )}
+              </FadeIn>}
 
             {/* Camera icon */}
             <FadeIn delay={0.35}>
@@ -153,8 +150,7 @@ export default function Index() {
           </FadeIn>
 
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
-            {features.map((feature) => (
-              <StaggerItem key={feature.title}>
+            {features.map(feature => <StaggerItem key={feature.title}>
                 <HoverScale>
                   <Card className="p-5 md:p-6 h-full hover:border-foreground/20 transition-colors">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-secondary flex items-center justify-center mb-3 md:mb-4">
@@ -164,8 +160,7 @@ export default function Index() {
                     <p className="text-muted-foreground text-sm md:text-base">{feature.description}</p>
                   </Card>
                 </HoverScale>
-              </StaggerItem>
-            ))}
+              </StaggerItem>)}
           </StaggerContainer>
         </div>
       </section>
@@ -187,9 +182,8 @@ export default function Index() {
               {/* Connection line */}
               <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-border" />
 
-              {learningPath.map((phase, i) => (
-                <FadeIn key={phase.step} delay={i * 0.1} direction="left">
-                  <div className="relative flex items-start gap-4 md:gap-6 pb-24 md:pb-28 last:pb-0">
+              {learningPath.map((phase, i) => <FadeIn key={phase.step} delay={i * 0.1} direction="left">
+                  <div className="relative flex items-start gap-4 md:gap-6 pb-24 md:pb-28 last:pb-0 mx-0 my-[12px]">
                     {/* Step indicator */}
                     <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-full bg-card border border-border flex items-center justify-center flex-shrink-0">
                       <phase.icon className="w-5 h-5 md:w-6 md:h-6" />
@@ -201,15 +195,10 @@ export default function Index() {
                         <Badge variant="secondary" className="text-xs">Phase {phase.step}</Badge>
                       </div>
                       <h3 className="font-display text-xl md:text-2xl mb-1 md:mb-2">{phase.title}</h3>
-                      {phase.lessons > 0 ? (
-                        <p className="text-muted-foreground text-sm md:text-base">{phase.lessons} comprehensive lessons</p>
-                      ) : (
-                        <p className="text-muted-foreground text-sm md:text-base">Challenges & real-world practice</p>
-                      )}
+                      {phase.lessons > 0 ? <p className="text-muted-foreground text-sm md:text-base">{phase.lessons} comprehensive lessons</p> : <p className="text-muted-foreground text-sm md:text-base">Challenges & real-world practice</p>}
                     </Card>
                   </div>
-                </FadeIn>
-              ))}
+                </FadeIn>)}
             </div>
           </div>
 
@@ -248,33 +237,19 @@ export default function Index() {
                   <div>
                     <Badge variant="destructive" className="mb-4">Auto Mode</Badge>
                     <ul className="space-y-2 md:space-y-3">
-                      {[
-                        'Flash fires when you don\'t want it',
-                        'Background stays distractingly sharp',
-                        'Moving subjects come out blurry',
-                        'Beautiful light gets washed out',
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-muted-foreground text-sm md:text-base">
+                      {['Flash fires when you don\'t want it', 'Background stays distractingly sharp', 'Moving subjects come out blurry', 'Beautiful light gets washed out'].map((item, i) => <li key={i} className="flex items-center gap-2 text-muted-foreground text-sm md:text-base">
                           <div className="w-1.5 h-1.5 rounded-full bg-destructive flex-shrink-0" />
                           {item}
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
                   <div>
                     <Badge className="mb-4">Manual Control</Badge>
                     <ul className="space-y-2 md:space-y-3">
-                      {[
-                        'Create dreamy background blur',
-                        'Freeze action with precision',
-                        'Capture moody ambient light',
-                        'Consistent, professional results',
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm md:text-base">
+                      {['Create dreamy background blur', 'Freeze action with precision', 'Capture moody ambient light', 'Consistent, professional results'].map((item, i) => <li key={i} className="flex items-center gap-2 text-sm md:text-base">
                           <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-success flex-shrink-0" />
                           {item}
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
                 </div>
@@ -310,6 +285,5 @@ export default function Index() {
           </FadeIn>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 }
