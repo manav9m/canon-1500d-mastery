@@ -138,16 +138,6 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div 
-          className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <div className="w-5 h-8 md:w-6 md:h-10 rounded-full border border-border flex items-start justify-center p-1.5">
-            <div className="w-1 h-2 rounded-full bg-muted-foreground/50" />
-          </div>
-        </motion.div>
       </section>
 
       {/* Features Grid */}
